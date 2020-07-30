@@ -1,0 +1,24 @@
+<div class="container-fluid row">
+  <app-registration
+    class="col-xs-12 col-sm-3"
+    [employee]="employee"
+    [managers]="managerList"
+    *ngIf="!isUpdate"
+    (onEmployeeAdded)="handleEmployeeAdded($event)"
+    (reloadEmployees)="loadEmployees()"
+  ></app-registration>
+  <app-update-employee
+    class="col-xs-12 col-sm-3"
+    [employee]="employee"
+    [managers]="managerList"
+    *ngIf="isUpdate"
+    (reloadEmployeesEmitter)="loadEmployees()"
+    (addEmployeeEmitter)="retsetAddForm()"
+  ></app-update-employee>
+  <app-employee-list
+    class="col-xs-12 col-sm-9"
+    (reloadEmployees)="loadEmployees()"
+    (updateEmployee)="updateEmployee($event)"
+    [employeeList]="employeeList"
+  ></app-employee-list>
+</div>

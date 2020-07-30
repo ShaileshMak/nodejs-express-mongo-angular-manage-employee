@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-express-mongo-angular-manage-employee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaileshMak/nodejs-express-mongo-angular-manage-employee.git"
+  },
+  "keywords": [
+    "MEAN",
+    "ANGULAR",
+    "EXPRESS",
+    "NODEJS",
+    "MONGODB",
+    "TYPESCRIPT"
+  ],
+  "author": "Shailesh Makwana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShaileshMak/nodejs-express-mongo-angular-manage-employee/issues"
+  },
+  "homepage": "https://github.com/ShaileshMak/nodejs-express-mongo-angular-manage-employee#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "exceljs": "^4.1.1",
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.7.7",
+    "nodemon": "^1.19.4"
+  }
+}

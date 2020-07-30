@@ -1,0 +1,111 @@
+<div class="jumbotron jumbotron-fluid my-1 h-100">
+  <div class="container">
+    <h1 class="display-4">Update Employee</h1>
+    <form (ngSubmit)="updateEmployee()" [formGroup]="updateForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          id="firstName"
+          class="form-control"
+          [class.is-invalid]="firstName.touched && firstName.invalid"
+          type="text"
+          formControlName="firstName"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="firstName.valid || firstName.untouched"
+          >First Name is required</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          id="lastName"
+          class="form-control"
+          type="text"
+          [class.is-invalid]="lastName.touched && lastName.invalid"
+          formControlName="lastName"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="lastName.valid || lastName.untouched"
+          >Last Name is required</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="dateOfJoining">D.O.J.</label>
+        <input
+          type="text"
+          formControlName="dateOfJoining"
+          id="dateOfJoining"
+          [class.is-invalid]="dateOfJoining.touched && dateOfJoining.invalid"
+          class="form-control"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="dateOfJoining.valid || dateOfJoining.untouched"
+          >D.O.J. Name is required</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input
+          id="department"
+          class="form-control"
+          type="text"
+          [class.is-invalid]="department.touched && department.invalid"
+          formControlName="department"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="department.valid || department.untouched"
+          >Department is required</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="reportingTo">Reporting To</label>
+        <select
+          id="reportingTo"
+          class="form-control"
+          [class.is-invalid]="reportingTo.touched && reportingTo.invalid"
+          formControlName="reportingTo"
+        >
+          <option value="" selected disabled hidden>Select Manager</option>
+          <option *ngFor="let manager of managers" [value]="manager">{{
+            manager
+          }}</option>
+        </select>
+        <small
+          class="text-danger"
+          [class.d-none]="reportingTo.valid || reportingTo.untouched"
+          >ReportingTo is required</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="skillSet">Skill Set</label>
+        <input
+          id="skillSet"
+          class="form-control"
+          type="text"
+          [class.is-invalid]="skillSet.touched && skillSet.invalid"
+          formControlName="skillSet"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="skillSet.valid || skillSet.untouched"
+          >Skill Set is required</small
+        >
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!updateForm.valid"
+      >
+        Update
+      </button>
+      <button class="btn btn-danger ml-2" (click)="addEmployee()">
+        Add Employee
+      </button>
+    </form>
+  </div>
+</div>

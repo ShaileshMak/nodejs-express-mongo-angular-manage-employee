@@ -1,0 +1,40 @@
+<div class="jumbotron jumbotron-fluid my-1 h-100">
+  <div class="container">
+    <h1 class="display-4">Employees Detail</h1>
+    <table class="table">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>D.O.J</th>
+        <th>Reporting To</th>
+        <th>Department</th>
+        <th>Skill select</th>
+        <th></th>
+      </tr>
+      <tbody class="table-rows">
+        <tr *ngFor="let employee of employeeList; let indexOfelement = index">
+          <td>{{ indexOfelement + 1 }}</td>
+          <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+          <td>{{ employee.dateOfJoining }}</td>
+          <td>{{ employee.reportingTo }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.skillSet }}</td>
+          <td>
+            <button
+              class="btn btn-secondary mr-2"
+              (click)="editEmployee(employee)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-secondary"
+              (click)="deleteEmployee(employee)"
+            >
+              delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
